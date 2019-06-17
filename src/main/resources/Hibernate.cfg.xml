@@ -15,5 +15,8 @@
     <property name="hbm2ddl.auto">update</property>  
     <mapping class="com.andychylde.schoolsmanager.School"/> 
     <mapping class="com.andychylde.schoolsmanager.utils.SystemUser"/> 
+    <mapping class="com.andychylde.schoolsmanager.utils.Person"/>
+    
+    <!--mapping class="com.andychylde.schoolsmanager.utils.Person.PersonName"/-->
   </session-factory>
 </hibernate-configuration>

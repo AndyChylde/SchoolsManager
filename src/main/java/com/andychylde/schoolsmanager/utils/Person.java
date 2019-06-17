@@ -5,9 +5,11 @@ import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import org.hibernate.annotations.Entity;
+import javax.persistence.Entity;
 
 /**
  *
@@ -15,28 +17,36 @@ import org.hibernate.annotations.Entity;
  */
 @Entity
 @Table(name = "Persons")
-public class Person implements Serializable{
+public class Person implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "PersonId")
     private long personId;
     @Embedded
-    private final PersonName personName;
-    @Column(name="birthdate")
+    private final PersonName personName = new PersonName();
+    @Column(name = "birthdate")
     private LocalDate birthDate;
     @Column(name = "gender")
-    private Gender gender;
+    private Gender gender = Gender.UNKNOWN;
 
 //    Constructor(s).............................................................
     /*
     @param firstname
     @param middlename
     @param familyname    
-    */
+     */
     public Person(String firstname, String middlename, String familyname, LocalDate birthDate, Gender gender) {
-        this.personName = new PersonName(firstname, middlename, familyname);
+        this.personName.familyname = familyname;
+        this.personName.middlename = middlename;
+        this.personName.firstname = firstname;
         this.birthDate = birthDate;
         this.gender = gender;
+
+    }
+
+    public Person() {
+
     }
 
 //    Setters amd Getters........................................................
@@ -86,21 +96,23 @@ public class Person implements Serializable{
         public void setGenderType(String genderType) {
             this.genderType = genderType;
         }
-        
 
     }
 
     @Embeddable
-    static class PersonName implements Serializable {
+    public static class PersonName implements Serializable {
 
-//        Nested class attributes................................................
+//        inner class attributes................................................
+        @Column(name = "First_Name")
         String firstname;
+        @Column(name = "Middle_Name")
         String middlename;
+        @Column(name = "Family_Name")
         String familyname;
 
 //        Nested class constructor(s)............................................
         public PersonName() {
-        }
+        }    //default constructor
 
         public PersonName(String firstname, String middlename, String familyname) {
             this.firstname = firstname;
@@ -133,6 +145,10 @@ public class Person implements Serializable{
             this.familyname = familyname;
         }
 
-    }
+        @Override
+        public String toString() {
+            return firstname + " " + middlename + " " + familyname.toUpperCase();
+        }
 
+    }
 }

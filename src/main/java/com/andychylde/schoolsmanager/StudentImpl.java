@@ -8,4 +8,6 @@ package com.andychylde.schoolsmanager;
  */
 public class StudentImpl implements Student{
     
+    
+    
 }
