@@ -23,6 +23,7 @@ public class School implements Serializable {
     private int schoolId;
     @Column(name = "SchoolName", length = 255, nullable = false)
     private String schoolName;
+    
 
 //    Constructors..............................................................
     public School(String schoolName) {
