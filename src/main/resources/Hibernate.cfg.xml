@@ -16,6 +16,7 @@
     <mapping class="com.andychylde.schoolsmanager.School"/> 
     <mapping class="com.andychylde.schoolsmanager.utils.SystemUser"/> 
     <mapping class="com.andychylde.schoolsmanager.utils.Person"/>
+    <mapping class="com.andychylde.schoolsmanager.TeacherImpl"/>
     
     <!--mapping class="com.andychylde.schoolsmanager.utils.Person.PersonName"/-->
   </session-factory>

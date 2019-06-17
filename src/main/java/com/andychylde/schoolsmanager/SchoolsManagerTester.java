@@ -15,12 +15,14 @@ public class SchoolsManagerTester {
 
 //        Creating a person
         Person aPerson = new Person();
-       
+
         aPerson.getPersonName().setFamilyname("Falase");
         aPerson.getPersonName().setFirstname("Adefemi");
         aPerson.getPersonName().setMiddlename("");
-       
-        
+        Teacher aTeacher = new TeacherImpl();
+
+        ((TeacherImpl) aTeacher).setRoleHolder(aPerson);
+
 //        Creating a school
         School aSchool = new School("GCI");
 //        Persisting a school
@@ -29,12 +31,12 @@ public class SchoolsManagerTester {
         try (Session session = sessionFactory.openSession()) {
             // begin a transaction
             session.getTransaction().begin();
-            session.save(aPerson);
-            System.out.println("Person saved, id: " + aPerson.getPersonId());
+            session.save(aTeacher);
+            System.out.println("Person saved, id: " + ((TeacherImpl)aTeacher).getTeacherId());
             // commit transaction
             session.getTransaction().commit();
         }
-        
+
         HibernateUtil.shutdown();
 
     }

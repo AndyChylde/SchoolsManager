@@ -9,8 +9,12 @@ import java.time.LocalDate;
  */
 public abstract class SchoolRoleImpl implements SchoolRole, Serializable {
 
-    private LocalDate schoolRoleStart;
-    private LocalDate schoolRoleEnd;
+    protected LocalDate schoolRoleStart;
+    protected LocalDate schoolRoleEnd;
+    protected Person roleHolder;
+
+    public SchoolRoleImpl() {
+    }
 
     public SchoolRoleImpl(LocalDate schoolRoleStart) {
         this.schoolRoleStart = schoolRoleStart;
@@ -31,8 +35,5 @@ public abstract class SchoolRoleImpl implements SchoolRole, Serializable {
     public void setSchoolRoleEnd(LocalDate schoolRoleEnd) {
         this.schoolRoleEnd = schoolRoleEnd;
     }
-    
-    
-    
 
 }
