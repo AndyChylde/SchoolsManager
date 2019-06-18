@@ -1,5 +1,6 @@
 package com.andychylde.schoolsmanager;
 
+import com.andychylde.schoolsmanager.student_records.AcademicSession;
 import com.andychylde.schoolsmanager.utils.Person;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,6 +24,11 @@ public class SchoolsManagerTester {
 
         ((TeacherImpl) aTeacher).setRoleHolder(aPerson);
 
+        AcademicSession as = new AcademicSession();
+//        as.getTerms()[0].;
+                
+        
+        
 //        Creating a school
         School aSchool = new School("GCI");
 //        Persisting a school

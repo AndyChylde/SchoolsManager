@@ -19,17 +19,21 @@ public class SystemUser implements Serializable{
 //    Attributes................................................................
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int systemUserId;
+    protected int systemUserId;
     @Column(name="username",length=255,nullable=false)
-    private final String username;
+    protected final String username;
     @Column(name="password",length=200,nullable=false)
-    private String password;
+    protected String password;
 
 //    Constructor(s)............................................................
     public SystemUser(String username, String password) {
         this.username = username;
         this.password = password;
     }
+
+   
+    
+    
 
 //    Setters and Getters.......................................................
     public int getSystemUserId() {
