@@ -3,7 +3,8 @@
  */
 package com.andychylde.schoolsmanager.student_records;
 
-import com.andychylde.schoolsmanager.Student;
+import com.andychylde.schoolsmanager.com.andychylde.schoolsmanager.model.Student;
+
 import java.time.LocalDate;
 
 /**
@@ -12,8 +13,9 @@ import java.time.LocalDate;
  */
 
 
-public class StudentSubjectRegistration {
 
+public class StudentSubjectRegistration {
+//    Attributes..........................................................................
     private LocalDate registrationDate;
     private Student student;
     private Subject subject;

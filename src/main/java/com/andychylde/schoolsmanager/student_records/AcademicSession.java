@@ -1,30 +1,46 @@
 package com.andychylde.schoolsmanager.student_records;
 
+import java.io.Serializable;
 import java.time.LocalDate;
-import javax.persistence.Entity;
 
 /**
  *
  * @author Femi Falase
  */
 //@Entity
-public class AcademicSession {
+public class AcademicSession implements Serializable {
 
     private LocalDate academicSessionStartDate;
     private LocalDate academicSessionEndDate;
     private final Term[] terms = new Term[3];
+    enum TermId{FIRST_TERM, SECOND_TERM, THIRD_TERM}
 
     public AcademicSession() {
-
-        terms[0] = new Term();//First Term
-        terms[1] = new Term();//Second Term
-        terms[2] = new Term();//Third Term
+        terms[0] = new Term(1);//First Term
+//        setting the term 1 start date to session start date
+        terms[0].termStart = this.academicSessionStartDate;
+        terms[1] = new Term(2);//Second Term
+        terms[2] = new Term(3);//Third Term
+//         setting the term 3 end date to session end date
+        terms[2].termEnd = academicSessionEndDate;
 
     }
 
-    public class Term {
+    public static class Term {
 
-        private LocalDate termStart, termEnd;
+        LocalDate termStart, termEnd;
+        TermId termId;
+
+        public Term(int i) {
+            switch(i){
+                case 1:
+                    this.termId=TermId.FIRST_TERM;
+                case 2:
+                    this.termId=TermId.SECOND_TERM;
+                case 3:
+                    this.termId=TermId.THIRD_TERM;
+            }
+        }
 
         public LocalDate getTermStart() {
             return termStart;
@@ -44,10 +60,10 @@ public class AcademicSession {
 
     }
 
-    public Term createAcademicTerm() {
-
-        return new Term();
-    }
+//    public Term createAcademicTerm() {
+//
+//        return new Term();
+//    }
 
     public LocalDate getAcademicSessionStartDate() {
         return academicSessionStartDate;

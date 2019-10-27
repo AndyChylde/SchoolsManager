@@ -1,15 +1,8 @@
 package com.andychylde.schoolsmanager.utils;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Entity;
 
 /**
  *
@@ -25,9 +18,9 @@ public class Person implements Serializable {
     private long personId;
     @Embedded
     private final PersonName personName = new PersonName();
-    @Column(name = "birthdate")
+    @Column(name = "BirthDate")
     private LocalDate birthDate;
-    @Column(name = "gender")
+    @Column(name = "Gender")
     private Gender gender = Gender.UNKNOWN;
 
 //    Constructor(s).............................................................
@@ -79,7 +72,7 @@ public class Person implements Serializable {
     }
 
 //    Nested Classe(s)...........................................................
-    enum Gender {
+    public enum Gender {
         FEMALE("Female"), MALE("Male"), UNKNOWN("Unknown");
         private String genderType;
 
@@ -87,8 +80,8 @@ public class Person implements Serializable {
         private Gender(String genderType) {
             this.genderType = genderType;
         }
-//        Gender setters and getters.............................................
 
+//        Gender setters and getters.............................................
         public String getGenderType() {
             return genderType;
         }

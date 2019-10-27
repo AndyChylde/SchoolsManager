@@ -14,6 +14,16 @@
           <element id="module-output" name="SchoolsManager" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:unknown" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.1.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.1.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.1.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.1.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.1.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.1.8.RELEASE" />
+          <element id="library" level="project" name="Maven: com.google.firebase:firebase-core:17.0.1" />
+          <element id="library" level="project" name="Maven: com.google.firebase:firebase-auth:18.1.0" />
+          <element id="library" level="project" name="Maven: com.google.firebase:firebase-database:18.0.1" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:5.4.3.Final" />
           <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" />
           <element id="library" level="project" name="Maven: javax.persistence:javax.persistence-api:2.2" />

@@ -1,5 +1,8 @@
 package com.andychylde.schoolsmanager;
 
+import com.andychylde.schoolsmanager.com.andychylde.schoolsmanager.model.SchoolImpl;
+import com.andychylde.schoolsmanager.com.andychylde.schoolsmanager.model.Teacher;
+import com.andychylde.schoolsmanager.com.andychylde.schoolsmanager.model.TeacherImpl;
 import com.andychylde.schoolsmanager.student_records.AcademicSession;
 import com.andychylde.schoolsmanager.utils.Person;
 import org.hibernate.Session;
@@ -30,7 +33,7 @@ public class SchoolsManagerTester {
         
         
 //        Creating a school
-        School aSchool = new School("GCI");
+        SchoolImpl aSchoolImpl = new SchoolImpl("GCI");
 //        Persisting a school
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         // begin a transaction
